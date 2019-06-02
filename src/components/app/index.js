@@ -1,11 +1,16 @@
-import React from 'react';
+import React from "react";
+import Nav from "../nav";
+import Container from "../container";
+import GlobalStyle from "./styles";
 
 const App = () => {
   return (
-    <div>
-      <h1>App</h1>
-    </div>
+    <>
+      <GlobalStyle />
+      <Nav />
+      <Container />
+    </>
   );
-}
+};
 
 export default App;
