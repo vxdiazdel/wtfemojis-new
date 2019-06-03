@@ -13,7 +13,7 @@ export default createGlobalStyle`
     margin: 0;
     padding: 0;
     color: ${colors.darkGrey};
-    scrolling-behavior: smooth;
+    scroll-behavior: smooth;
     font-family: Helvetica, Arial, sans-serif;
     font-size: ${rem(16)};
   }
