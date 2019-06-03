@@ -1,14 +1,18 @@
-import React, { useContext } from 'react';
+import React, { useContext } from "react";
 import { EmojiContext } from "../../stores/emoji-context";
+import Emoji from "../emoji";
+import * as Styled from "./styled-components";
 
 const EmojiList = () => {
   const [emojis] = useContext(EmojiContext);
 
-  return(
-    <div>
-      <pre>{JSON.stringify(emojis, null, 2)}</pre>
-    </div>
+  return (
+    <Styled.ListWrap>
+      {emojis.map(emoji => (
+        <Emoji key={emoji._id} data={emoji}/>
+      ))}
+    </Styled.ListWrap>
   );
-}
+};
 
 export default EmojiList;
