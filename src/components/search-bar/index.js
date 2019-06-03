@@ -1,17 +1,17 @@
-import React, { useState } from "react";
-import * as Styled from './styled-components';
+import React, { useContext } from "react";
+import { SearchContext } from "../../stores/search-context";
+import * as Styled from "./styled-components";
 
 const SearchBar = () => {
-  const [searchVal, setSearchVal] = useState('');
+  const [searchText, setSearchText] = useContext(SearchContext);
+
   return (
-    <>
-      <Styled.Input 
-        type="text" 
-        placeholder="Search..." 
-        onChange={(e) => setSearchVal(e.target.val)}
-        value={searchVal}
-      />
-    </>
+    <Styled.Input
+      type="text"
+      placeholder="Search..."
+      onChange={e => setSearchText(e.target.val)}
+      value={searchText}
+    />
   );
 };
 
