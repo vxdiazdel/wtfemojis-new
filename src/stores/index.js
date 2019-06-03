@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { EmojiContext } from "./emoji-context";
 import { SearchContext } from "./search-context";
-import emojiData from '../config/emojis';
+import emojiData from "../config/emojis";
 
 const Store = ({ children }) => {
   const [searchText, setSearchText] = useState("");
