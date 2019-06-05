@@ -8,7 +8,7 @@ export const EmojiWrap = styled.div`
   padding: 0;
   border-radius: ${rem(4)};
   transition: 0.25s ease-in-out;
-  height: 100%;
+  height: auto;
   cursor: pointer;
   :hover {
     box-shadow: 0 24px 38px 3px rgba(0, 0, 0, 0.14),
@@ -19,8 +19,9 @@ export const EmojiWrap = styled.div`
 export const Emoji = styled.span`
   display: block;
   font-size: ${rem(80)};
-  height: inherit;
   font-weight: normal;
+  line-height: 1.5;
+  transform: translateY(5px);
   font-family: "Apple Color Emoji", "Segoe UI Emoji", "NotoColorEmoji",
     "Segoe UI Symbol", "Android Emoji", "EmojiSymbols";
 `;

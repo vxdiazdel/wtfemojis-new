@@ -3,7 +3,7 @@ import { rem } from "polished";
 import { colors } from "../../styles";
 
 export const Navbar = styled.nav`
-  height: 60px;
+  height: 50px;
   background: ${colors.periwinkle};
   padding: 0 ${rem(16)};
 `;
@@ -22,8 +22,4 @@ export const NavbarLeft = styled.div`
     color: white;
     font-size: ${rem(24)};
   }
-`;
-
-export const NavbarRight = styled.div`
-
 `;
