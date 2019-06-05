@@ -7,12 +7,13 @@ const Nav = () => (
     <Styled.NavContainer>
       <Styled.NavbarLeft>
         <a href="/">
-          wtfEmojis<span role="img" aria-label="OK hand">👌</span>
+          wtfEmojis
+          <span role="img" aria-label="OK hand">
+            👌
+          </span>
         </a>
       </Styled.NavbarLeft>
-      <Styled.NavbarRight>
-        <SearchBar />
-      </Styled.NavbarRight>
+      <SearchBar />
     </Styled.NavContainer>
   </Styled.Navbar>
 );
