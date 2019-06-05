@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { EmojiContext } from "../../stores/emoji-context";
 import Emoji from "../emoji";
+import NotFound from "../not-found";
 import * as Styled from "./styled-components";
 
 const EmojiList = () => {
@@ -9,12 +10,11 @@ const EmojiList = () => {
 
   return (
     <Styled.ListWrap>
-      { 
-        filtered.length ?
-        filtered.map(emoji => (
-          <Emoji key={emoji._id} data={emoji}/>
-        )) : 'Oops...'
-      }
+      {filtered.length ? (
+        filtered.map(emoji => <Emoji key={emoji._id} data={emoji} />)
+      ) : (
+        <NotFound />
+      )}
     </Styled.ListWrap>
   );
 };
