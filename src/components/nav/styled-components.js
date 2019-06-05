@@ -6,6 +6,11 @@ export const Navbar = styled.nav`
   height: 50px;
   background: ${colors.periwinkle};
   padding: 0 ${rem(16)};
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
 `;
 
 export const NavContainer = styled.div`

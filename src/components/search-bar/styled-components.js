@@ -12,6 +12,8 @@ export const Input = styled.input`
   border: none;
   height: 30px;
   width: 150px;
+  font-size: ${rem(12)};
+  letter-spacing: ${rem(.5)};
   :hover {
     background: rgba(255, 255, 255, 0.25);
   }
