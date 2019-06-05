@@ -5,7 +5,7 @@ import emojiData from "../config/emojis";
 
 const Store = ({ children }) => {
   const [searchText, setSearchText] = useState("");
-  const [emojis, setEmojis] = useState(emojiData);
+  const [emojis, setEmojis] = useState({ all: emojiData, filtered: emojiData });
 
   return (
     <SearchContext.Provider value={[searchText, setSearchText]}>

@@ -5,12 +5,16 @@ import * as Styled from "./styled-components";
 
 const EmojiList = () => {
   const [emojis] = useContext(EmojiContext);
+  const { filtered } = emojis;
 
   return (
     <Styled.ListWrap>
-      {emojis.map(emoji => (
-        <Emoji key={emoji._id} data={emoji}/>
-      ))}
+      { 
+        filtered.length ?
+        filtered.map(emoji => (
+          <Emoji key={emoji._id} data={emoji}/>
+        )) : 'Oops...'
+      }
     </Styled.ListWrap>
   );
 };
