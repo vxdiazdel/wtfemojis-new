@@ -1,10 +1,10 @@
 import React from "react";
 import * as Styled from "./styled-components";
 
-const Emoji = ({ data }) => (
-  <Styled.EmojiWrap>
-    <Styled.Emoji role="img" aria-label={data.name} title={data.name}>
-      {data.emoji}
+const Emoji = ({ data: { name, emoji } }) => (
+  <Styled.EmojiWrap title={name}>
+    <Styled.Emoji role="img" aria-label={name}>
+      {emoji}
     </Styled.Emoji>
   </Styled.EmojiWrap>
 );
