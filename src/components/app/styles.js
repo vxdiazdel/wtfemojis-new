@@ -2,6 +2,8 @@ import { createGlobalStyle } from "styled-components";
 import { rem } from "polished";
 import { colors } from "../../styles";
 
+const { white, darkGrey } = colors;
+
 export default createGlobalStyle`
   @import url('https://fonts.googleapis.com/css?family=Varela+Round&display=swap');
   *,
@@ -10,10 +12,10 @@ export default createGlobalStyle`
     box-sizing: border-box;
   }
   body {
-    background: ${colors.white};
+    background: ${white};
     margin: 0;
     padding: 0;
-    color: ${colors.darkGrey};
+    color: ${darkGrey};
     scroll-behavior: smooth;
     font-family: 'Varela Round', sans-serif;
     font-size: ${rem(16)};
