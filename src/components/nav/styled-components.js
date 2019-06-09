@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { rem } from "polished";
 import { colors } from "../../styles";
 
@@ -22,9 +22,22 @@ export const NavContainer = styled.div`
   align-items: center;
 `;
 
+const rotate = keyframes`
+  to {
+    transform: rotate(360deg);
+  }
+`;
+
 export const NavbarLeft = styled.div`
   a {
     color: white;
     font-size: ${rem(24)};
+  }
+  span {
+    display: inline-block;
+    transform-origin: center;
+  }
+  :hover span {
+    animation: ${rotate} .75s infinite linear forwards;
   }
 `;
