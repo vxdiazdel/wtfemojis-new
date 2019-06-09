@@ -5,18 +5,21 @@ import { colors } from "../../styles";
 const { white, teal, pink } = colors;
 
 export const Popup = styled.div`
-  background: ${({ hasError }) => hasError ? pink : teal};
+  background: ${({ hasError }) => (hasError ? pink : teal)};
   border-radius: ${rem(6)};
   color: ${white};
-  opacity: ${({ hasError }) => hasError === null ? 0 : 1};
-  padding: ${rem(10)};
+  opacity: ${({ hasError }) => (hasError === null ? 0 : 1)};
+  padding: ${rem(15)} ${rem(20)};
   pointer-events: none;
-  ${position('fixed', 'auto', rem(25), rem(25), 'auto')};
-  ${({ hasError }) => 
-    hasError === null 
-    ? css`transform: translateX(${rem(10)}) scale(0.75);`
-    : css`transform: translateX(0) scale(1);`
-  };
+  ${position("fixed", "auto", rem(25), rem(25), "auto")};
+  ${({ hasError }) =>
+    hasError === null
+      ? css`
+          transform: translateX(${rem(10)}) scale(0.75);
+        `
+      : css`
+          transform: translateX(0) scale(1);
+        `};
   transition: all 0.2s ease-in-out;
   transform-origin: right;
 `;

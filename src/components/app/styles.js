@@ -14,12 +14,10 @@ export default createGlobalStyle`
   body {
     background: ${white};
     margin: 0;
-    padding: 0;
+    padding: ${rem(50)} 0 0 0;
     color: ${darkGrey};
-    scroll-behavior: smooth;
     font-family: 'Varela Round', sans-serif;
     font-size: ${rem(16)};
-    margin-top: 50px;
   }
   a {
     text-decoration: none;
