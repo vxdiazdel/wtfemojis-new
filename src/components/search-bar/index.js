@@ -11,12 +11,11 @@ const SearchBar = () => {
   useEffect(() => {
     if (!searchText.length) return setEmojis({ all, filtered: all });
 
-    setEmojis({
-      all,
-      filtered: all.filter(
-        emoji => emoji.name.toLowerCase().indexOf(searchText) !== -1
-      )
-    });
+    const filtered = all.filter(
+      x => x.name.toLowerCase().indexOf(searchText) !== -1
+    );
+
+    setEmojis({ all, filtered });
   }, [all, searchText, setEmojis]);
 
   return (
