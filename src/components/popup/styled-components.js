@@ -8,6 +8,7 @@ export const Popup = styled.div`
   background: ${({ hasError }) => (hasError ? pink : teal)};
   border-radius: ${rem(6)};
   color: ${white};
+  font-size: ${rem(18)};
   opacity: ${({ hasError }) => (hasError === null ? 0 : 1)};
   padding: ${rem(15)} ${rem(20)};
   pointer-events: none;
@@ -28,6 +29,5 @@ export const PopupText = styled.h4`
   line-height: 1.5;
   margin: 0;
   padding: 0;
-  text-transform: uppercase;
   user-select: none;
 `;

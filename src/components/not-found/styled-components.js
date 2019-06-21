@@ -6,7 +6,6 @@ export const NotFoundWrap = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: calc(100vh - ${rem(525)});
 `;
 
 export const EmojiWrap = styled.span`
