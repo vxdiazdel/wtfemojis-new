@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { EMOJIS_API } from '../config/constants';
 import { EmojiContext } from "./emoji-context";
 import { SearchContext } from "./search-context";
 import { ErrorContext } from "./error-context";
@@ -13,13 +14,14 @@ const Store = ({ children }) => {
   useEffect(() => {
     setIsLoading(true);
     if (!localStorage.getItem('emojiData')) {
-      fetch('https://raw.githubusercontent.com/vxdiazdel/wtfemojis/master/config/emojis.json')
-        .then(res => res.json())
-        .then(data => {
-          setEmojis({ all: data, filtered: data });
-          setIsLoading(false);
-          localStorage.setItem('emojiData', JSON.stringify(data));
-        });
+      const fetchData = async () => {
+        const res = await fetch(EMOJIS_API);
+        const data = await res.json();
+        setEmojis({ all: data, filtered: data });
+        setIsLoading(false);
+        localStorage.setItem('emojiData', JSON.stringify(data));
+      }
+      fetchData();
     } else {
       const data = JSON.parse(localStorage.getItem('emojiData'));
       setEmojis({ all: data, filtered: data });
