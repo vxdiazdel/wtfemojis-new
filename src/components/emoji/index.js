@@ -37,11 +37,20 @@ const Emoji = ({ data: { name, emoji, _id } }) => {
     }, 1250);
   };
 
+  const handleKeyPress = (e, emoji) => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      copyToClipboard(emoji);
+    }
+  }
+
   return (
     <Styled.EmojiWrap
       title={name}
       id={_id}
       onClick={() => copyToClipboard(emoji)}
+      onKeyPress={e => handleKeyPress(e, emoji)}
+      tabIndex="0"
     >
       <Styled.Emoji role="img" aria-label={name}>
         {emoji}
