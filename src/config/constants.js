@@ -1,1 +1,1 @@
-export const EMOJIS_API = 'https://gist.githubusercontent.com/vxdiazdel/6379467dac401f2e3e2f1b6a68933605/raw/0b1d7325044ec4c2abf1638c3f90a911b04abaa9/emojis.json';
+export const EMOJIS_API = 'https://gist.githubusercontent.com/vxdiazdel/6379467dac401f2e3e2f1b6a68933605/raw/emojis.json';
