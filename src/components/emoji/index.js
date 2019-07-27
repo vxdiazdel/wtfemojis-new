@@ -1,12 +1,14 @@
-import React, { useContext } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { ErrorContext } from "../../stores/error-context";
 import * as Styled from "./styled-components";
 
 const Emoji = ({ data: { name, emoji, _id } }) => {
   const [, setError] = useContext(ErrorContext);
+  const [currentEmoji, setCurrentEmoji] = useState(null);
 
   const copyToClipboard = async el => {
     setError(null);
+    setCurrentEmoji(el);
 
     if (navigator.clipboard) {
       await navigator.clipboard.writeText(el);
@@ -43,6 +45,10 @@ const Emoji = ({ data: { name, emoji, _id } }) => {
       copyToClipboard(emoji);
     }
   }
+
+  useEffect(() => {
+    if (currentEmoji) document.title = `wtfEmojis ${currentEmoji}`;
+  }, [currentEmoji]);
 
   return (
     <Styled.EmojiWrap
