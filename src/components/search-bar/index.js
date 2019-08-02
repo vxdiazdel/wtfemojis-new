@@ -15,7 +15,7 @@ const SearchBar = () => {
     if (!value) return setEmojis({ all, filtered: all });
     
     const filtered = all.filter(
-      x => x.name.toLowerCase().indexOf(value) !== -1
+      x => x.name.toLowerCase().indexOf(value.toLowerCase()) !== -1
     );
 
     setEmojis({ all, filtered });
