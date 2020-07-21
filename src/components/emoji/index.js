@@ -1,22 +1,25 @@
-import React, { useContext, useState, useEffect } from "react";
-import { ErrorContext } from "../../stores/error-context";
-import * as Styled from "./styled-components";
+import React, { useContext, useState, useEffect, useRef } from 'react';
+import { ErrorContext } from '../../stores/error-context';
+import * as Styled from './styled-components';
 
 const Emoji = ({ data: { name, emoji, _id } }) => {
   const [, setError] = useContext(ErrorContext);
   const [currentEmoji, setCurrentEmoji] = useState(null);
+  const timer = useRef();
 
   const copyToClipboard = async el => {
     setError(null);
     setCurrentEmoji(el);
+    clearInterval(timer.current);
 
     if (navigator.clipboard) {
       await navigator.clipboard.writeText(el);
       setError(false);
 
-      return setTimeout(() => {
+      timer.current = setTimeout(() => {
         setError(null);
       }, 1250);
+      return timer.current;
     }
 
     const emoji = document.getElementById(_id).firstChild;
@@ -27,16 +30,17 @@ const Emoji = ({ data: { name, emoji, _id } }) => {
     selection.removeAllRanges();
     selection.addRange(range);
 
-    if (document.execCommand("copy")) {
+    if (document.execCommand('copy')) {
       selection.removeAllRanges();
       setError(false);
     } else {
       setError(true);
     }
 
-    return setTimeout(() => {
+    timer.current = setTimeout(() => {
       setError(null);
     }, 1250);
+    return timer.current;
   };
 
   const handleKeyPress = (e, emoji) => {
@@ -44,7 +48,7 @@ const Emoji = ({ data: { name, emoji, _id } }) => {
       e.preventDefault();
       copyToClipboard(emoji);
     }
-  }
+  };
 
   useEffect(() => {
     if (currentEmoji) document.title = `wtfEmojis ${currentEmoji}`;
